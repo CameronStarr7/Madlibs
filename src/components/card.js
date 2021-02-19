@@ -3,43 +3,49 @@ import Content from './content';
 
 import Input from './input';
 
+const INITIAL_STATE = {
+        color: '',
+        pluralNoun: '',
+        adjectiveOne: '',
+        celebOne: '',
+        adjectiveTwo: '',
+        nounOne: '',
+        numberOne: '',
+        numberTwo: '',
+        nounTwo: '',
+        adjectiveThree: '',
+        celebTwo: '',
+        celebThree: '',
+        adjectiveFour: '',
+        nounThree: '',
+        celebFour: '',
+        adjectiveFive: '',
+        contentVisible: false,
+}
+
 class Card extends Component {
 
     constructor() {
         super()
 
-        this.state = {
-            color: '',
-            pluralNoun: '',
-            adjectiveOne: '',
-            celebOne: '',
-            adjectiveTwo: '',
-            nounOne: '',
-            numberOne: '',
-            numberTwo: '',
-            nounTwo: '',
-            adjectiveThree: '',
-            celebTwo: '',
-            celebThree: '',
-            adjectiveFour: '',
-            nounThree: '',
-            celebFour: '',
-            adjectiveFive: '',
-            contentVisible: false,
-        }
+        this.state = INITIAL_STATE;
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
     }
 
     handleInputChange(event) {
-        
         this.setState({ [event.target.name]: event.target.value }) 
     }
 
     handleFormSubmit(event) {
         event.preventDefault()
-        this.setState({ contentVisible: !this.state.contentVisible })
+
+        if(this.state.contentVisible) {
+            this.setState(INITIAL_STATE)
+        } else {
+            this.setState({ contentVisible: true })
+        }
     }
 
     render() {
