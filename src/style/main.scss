@@ -123,6 +123,23 @@ p {
         justify-self: center;
         margin-bottom: 84px;
 
+        font-family: 'Montserrat';
+
+        &_label {
+            height: 18px;
+            width: 18px;
+            line-height: 22px;
+            background-color: black;
+            border-radius: 50%;
+            font-size: 14px;
+
+            text-align: center;
+            color: white;
+            //padding-top: 3px;
+            display: inline-block;
+            margin: 4px;
+        }
+
         p{
             line-height: 29px;
             padding: 50px 47px;
@@ -143,7 +160,7 @@ p {
     grid-column-gap: 8px;
 
     height:47px;
-
+ 
     &_title {
         grid-column: input-s/input-e;
 
@@ -183,4 +200,3 @@ p {
         border-radius: 50%;
     }
 }
-
